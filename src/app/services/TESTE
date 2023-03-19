@@ -1,0 +1,206 @@
+<ng-container *ngIf="strats2 && fighter2">
+      <div class="strats">
+        <div class="strats-container">
+          <p>Strats Geral</p>
+          <p>
+            {{
+              strats2.stratPunching +
+                strats2.stratKicking +
+                strats2.stratClinching +
+                strats2.stratTakedowns
+            }}
+          </p>
+          <label for="stratPunching">Punching</label>
+          <input
+            [(ngModel)]="strats2.stratPunching"
+            [formControl]="stratPunching"
+            type="number"
+            id="stratPunching"
+            name="stratPunching"
+            min="0"
+            max="100"
+            value="{{ strats2.stratPunching }}"
+          />
+
+          <label for="stratKicking">Kicking</label>
+          <input
+            [(ngModel)]="strats2.stratKicking"
+            [formControl]="stratKicking"
+            type="number"
+            id="stratKicking"
+            name="stratKicking"
+            min="0"
+            max="100"
+            value="{{ strats2.stratKicking }}"
+          />
+
+          <label for="stratClinching">Clinching</label>
+          <input
+            [(ngModel)]="strats2.stratClinching"
+            [formControl]="stratClinching"
+            type="number"
+            id="stratClinching"
+            name="stratClinching"
+            min="0"
+            max="100"
+            value="{{ strats2.stratClinching }}"
+          />
+
+          <label for="stratTakedowns">Takedowns</label>
+          <input
+            [(ngModel)]="strats2.stratTakedowns"
+            [formControl]="stratTakedowns"
+            type="number"
+            id="stratTakedowns"
+            name="stratTakedowns"
+            min="0"
+            max="100"
+            value="{{ strats2.stratTakedowns }}"
+          />
+        </div>
+
+        <!-- FIM GERAL -->
+
+        <!-- INICIO CLINCH  -->
+
+        <div class="strats-container">
+          <p>Strats Clinch</p>
+          <p>
+            {{
+              strats2.stratDirtyBoxing +
+                strats2.stratThaiClinch +
+                strats2.stratClinchTakedowns +
+                strats2.stratAvoidClinch
+            }}
+          </p>
+          <label for="stratDirtyBoxing">Dirty Boxing</label>
+          <input
+            [(ngModel)]="strats2.stratDirtyBoxing"
+            [formControl]="stratDirtyBoxing"
+            type="number"
+            id="stratDirtyBoxing"
+            name="stratDirtyBoxing"
+            min="0"
+            max="100"
+            value="{{ strats2.stratDirtyBoxing }}"
+          />
+
+          <label for="stratThaiClinch">Thai Clinch</label>
+          <input
+            [(ngModel)]="strats2.stratThaiClinch"
+            [formControl]="stratThaiClinch"
+            type="number"
+            id="stratThaiClinch"
+            name="stratThaiClinch"
+            min="0"
+            max="100"
+            value="{{ strats2.stratThaiClinch }}"
+          />
+
+          <label for="stratClinchTakedowns">Clinch Takedowns</label>
+          <input
+            [(ngModel)]="strats2.stratClinchTakedowns"
+            [formControl]="stratClinchTakedowns"
+            type="number"
+            id="stratClinchTakedowns"
+            name="stratClinchTakedowns"
+            min="0"
+            max="100"
+            value="{{ strats2.stratClinchTakedowns }}"
+          />
+
+          <label for="stratAvoidClinch">Avoid Clinch</label>
+          <input
+            [(ngModel)]="strats2.stratAvoidClinch"
+            [formControl]="stratAvoidClinch"
+            type="number"
+            id="stratAvoidClinch"
+            name="stratAvoidClinch"
+            min="0"
+            max="100"
+            value="{{ strats2.stratAvoidClinch }}"
+          />
+        </div>
+
+        <!-- FIM CLINCH -->
+
+        <!-- INICIO GROUND -->
+
+        <div class="strats-container">
+          <p>Strats Ground</p>
+          <p>
+            {{
+              strats2.stratGNP +
+                strats2.stratSub +
+                strats2.stratPositioning +
+                strats2.stratLNP +
+                strats2.stratStandUp
+            }}
+          </p>
+          <label for="stratGNP">GNP</label>
+          <input
+            [(ngModel)]="strats2.stratGNP"
+            [formControl]="stratGNP"
+            type="number"
+            id="stratDirtyBoxing"
+            name="stratGNP"
+            min="0"
+            max="100"
+            value="{{ strats2.stratGNP }}"
+          />
+
+          <label for="stratSub">Sub</label>
+          <input
+            [(ngModel)]="strats2.stratSub"
+            [formControl]="stratSub"
+            type="number"
+            id="stratSub"
+            name="stratSub"
+            min="0"
+            max="100"
+            value="{{ strats2.stratSub }}"
+          />
+
+          <label for="stratPositioning">Positioning</label>
+          <input
+            [(ngModel)]="strats2.stratPositioning"
+            [formControl]="stratPositioning"
+            type="number"
+            id="stratPositioning"
+            name="stratPositioning"
+            min="0"
+            max="100"
+            value="{{ strats2.stratPositioning }}"
+          />
+
+          <label for="stratLNP">Lay and Pray</label>
+          <input
+            [(ngModel)]="strats2.stratLNP"
+            [formControl]="stratLNP"
+            type="number"
+            id="stratLNP"
+            name="stratLNP"
+            min="0"
+            max="100"
+            value="{{ strats2.stratLNP }}"
+          />
+
+          <label for="stratStandUp">StandUp</label>
+          <input
+            [(ngModel)]="strats2.stratStandUp"
+            [formControl]="stratStandUp"
+            type="number"
+            id="stratStandUp"
+            name="stratStandUp"
+            min="0"
+            max="100"
+            value="{{ strats2.stratStandUp }}"
+          />
+        </div>
+
+        <!-- FIM GROUND  -->
+      </div>
+      <div>
+        <button [disabled]="!validCampos1()">Atualizar Gameplan</button>
+      </div>
+    </ng-container>
