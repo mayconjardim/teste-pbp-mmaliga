@@ -6,8 +6,8 @@ export interface Fight {
   titleBout: boolean;
   generatePBP: boolean;
   happened: boolean;
-  fighter1: Fighter;
-  fighter2: Fighter;
+  fighter1: Fighter | null;
+  fighter2: Fighter | null;
   pbp?: any[];
 }
 

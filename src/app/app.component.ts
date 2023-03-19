@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
 
   lutaAtual!: number;
 
-  fighter1!: Fighter;
-  fighter2!: Fighter;
+  fighter1!: Fighter | null;
+  fighter2!: Fighter | null;
   strats1: Strats = {
     stratPunching: 0,
     stratKicking: 0,
@@ -160,14 +160,23 @@ export class AppComponent implements OnInit {
     });
   }
 
+  clean() {
+    this.pbp = [];
+    this.fighter1 = null;
+    this.fighter2 = null;
+    window.location.reload();
+  }
+
   onSelect1(event: MatSelectChange) {
     this.fighterById1(event.value);
     this.fighterStratsById1(event.value);
+    console.log(this.fighter1);
   }
 
   onSelect2(event: MatSelectChange) {
     this.fighterById2(event.value);
     this.fighterStratsById2(event.value);
+    console.log(this.fighter2);
   }
 
   validCampos1(): boolean {
@@ -227,10 +236,6 @@ export class AppComponent implements OnInit {
       isStrats2Valid &&
       isStrats3Valid
     );
-  }
-
-  teste() {
-    console.log(this.pbp);
   }
 
   validCampos2(): boolean {

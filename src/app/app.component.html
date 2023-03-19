@@ -630,8 +630,12 @@
   <div class="div3">
     <div>
       <button (click)="create()">Criar luta</button> >>>>>
-      <button (click)="teste()">Criar PBP</button>
+      <button (click)="clean()">Limpar</button>
     </div>
   </div>
-  <div class="div4"></div>
+  <div class="div4">
+    <p *ngFor="let fight of pbp">
+      {{ fight }}
+    </p>
+  </div>
 </div>
