@@ -31,6 +31,12 @@ export class AppComponent implements OnInit {
     stratPositioning: 0,
     stratLNP: 0,
     stratStandUp: 0,
+    fancyPunches: 0,
+    fightingStyle: 0,
+    tacticalStyle: 0,
+    fancyKicks: 0,
+    fancySubmissions: 0,
+    dirtyFighting: 0,
   };
   strats2!: Strats;
   fighters!: Fighter[];
@@ -82,6 +88,9 @@ export class AppComponent implements OnInit {
   stratStandUp: FormControl = new FormControl(null, [
     Validators.maxLength(100),
   ]);
+
+  taticalStyle: FormControl = new FormControl(null, [Validators.required]);
+  fightingStyle: FormControl = new FormControl(null, [Validators.required]);
 
   ngOnInit(): void {
     this.findAllFighters();
@@ -177,6 +186,34 @@ export class AppComponent implements OnInit {
     this.fighterById2(event.value);
     this.fighterStratsById2(event.value);
     console.log(this.fighter2);
+  }
+
+  retornaTatical(prioridade: any): string {
+    if (prioridade == '0') {
+      return 'All Power';
+    } else if (prioridade == '1') {
+      return 'Most Power';
+    } else if (prioridade == '2') {
+      return 'Normal';
+    } else if (prioridade == '3') {
+      return 'Most Techinique';
+    } else {
+      return 'All Techinique';
+    }
+  }
+
+  retornaStyle(prioridade: any): string {
+    if (prioridade == '0') {
+      return 'Very Defensive';
+    } else if (prioridade == '1') {
+      return 'Defensive';
+    } else if (prioridade == '2') {
+      return 'Normal';
+    } else if (prioridade == '3') {
+      return 'Aggresive';
+    } else {
+      return 'Very Aggresive';
+    }
   }
 
   validCampos1(): boolean {

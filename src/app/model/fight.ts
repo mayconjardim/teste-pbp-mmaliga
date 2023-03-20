@@ -58,4 +58,10 @@ export interface Strats {
   stratPositioning: number;
   stratLNP: number;
   stratStandUp: number;
+  fancyPunches: number;
+  fightingStyle: number;
+  tacticalStyle: number;
+  fancyKicks: number;
+  fancySubmissions: number;
+  dirtyFighting: number;
 }

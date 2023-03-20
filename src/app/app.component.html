@@ -1,7 +1,5 @@
 <div class="parent">
   <div class="div1">
-    <p>Fighter1</p>
-
     <mat-form-field appearance="fill">
       <mat-label>Select Fighter</mat-label>
       <mat-select (selectionChange)="onSelect1($event)">
@@ -13,7 +11,7 @@
 
     <div class="fighter">
       <ng-container *ngIf="fighter1">
-        <p>{{ fighter1.name }}</p>
+        <p class="name">{{ fighter1.name }}</p>
         <table class="blueTable">
           <caption>
             Ratings
@@ -316,17 +314,51 @@
 
         <!-- FIM GROUND  -->
       </div>
-      <div>
-        <button (click)="update()" [disabled]="!validCampos1()">
-          Atualizar Gameplan
-        </button>
+      <p>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Fighting Style /
+        Tactical Style
+      </p>
+      <div class="style">
+        <mat-form-field appearance="fill">
+          <mat-label>({{ retornaStyle(strats1.fightingStyle) }})</mat-label>
+          <mat-select
+            [(ngModel)]="strats1.fightingStyle"
+            name="prioridade"
+            [formControl]="fightingStyle"
+            required
+          >
+            <mat-option value="0">Very Defensive</mat-option>
+            <mat-option value="1">Defensive</mat-option>
+            <mat-option value="2">Normal</mat-option>
+            <mat-option value="3">Aggresive</mat-option>
+            <mat-option value="4">Very Aggresive</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>({{ retornaTatical(strats1.tacticalStyle) }})</mat-label>
+
+          <mat-select
+            [(ngModel)]="strats1.tacticalStyle"
+            name="prioridade"
+            [formControl]="taticalStyle"
+            required
+          >
+            <mat-option value="0">All Power</mat-option>
+            <mat-option value="1">Most Power</mat-option>
+            <mat-option value="2">Normal</mat-option>
+            <mat-option value="3">Most Techinique</mat-option>
+            <mat-option value="4">All Techinique</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
+      <button class="button" (click)="update()" [disabled]="!validCampos1()">
+        Atualizar Gameplan
+      </button>
     </ng-container>
   </div>
 
   <div class="div2">
-    <p>Fighter2</p>
-
     <mat-form-field appearance="fill">
       <mat-label>Select Fighter</mat-label>
       <mat-select (selectionChange)="onSelect2($event)">
@@ -338,7 +370,7 @@
 
     <div class="fighter">
       <ng-container *ngIf="fighter2">
-        <p>{{ fighter2.name }}</p>
+        <p class="name">{{ fighter2.name }}</p>
         <table class="blueTable">
           <caption>
             Ratings
