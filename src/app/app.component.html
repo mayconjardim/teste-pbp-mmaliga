@@ -11,7 +11,10 @@
 
     <div class="fighter">
       <ng-container *ngIf="fighter1">
-        <p class="name">{{ fighter1.name }}</p>
+        <p class="name">
+          {{ fighter1.name }} | Overall:
+          {{ fighter1.overall | number : "2.1-1" }}
+        </p>
         <table class="blueTable">
           <caption>
             Ratings
@@ -370,7 +373,10 @@
 
     <div class="fighter">
       <ng-container *ngIf="fighter2">
-        <p class="name">{{ fighter2.name }}</p>
+        <p class="name">
+          {{ fighter2.name }} | Overall:
+          {{ fighter2.overall | number : "2.1-1" }}
+        </p>
         <table class="blueTable">
           <caption>
             Ratings

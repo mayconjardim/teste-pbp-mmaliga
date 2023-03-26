@@ -41,6 +41,7 @@ export interface Fighter {
   conditioning: number;
   koResistance: number;
   toughness: number;
+  overall: number;
 }
 
 export interface Strats {
